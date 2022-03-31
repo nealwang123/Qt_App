@@ -209,9 +209,10 @@ jobs:
       #  
       - name: Install NSIS
         run: |
+             set-executionpolicy remotesigned -scope currentuser 
              Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
-             scoop bucket add extras - RunAsAdmin
-             scoop install nsis - RunAsAdmin
+             scoop bucket add extras 
+             scoop install nsis 
  
       #
       # Compile application
